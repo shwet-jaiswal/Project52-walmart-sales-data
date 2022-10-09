@@ -5,75 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project52 - Walmart Sales in Stormy Weather</title>
-</head>
-
-<body>
-
-    <div style="color:#01224C">
-        <form action="{{ url_for('predict')}}" method="post">
-			
-			<h3 style="color:#c91e2f;font-family:Arial, Helvetica, sans-serif;"><img src="https://www.freepnglogos.com/uploads/walmart-logo-33.jpg" width="180" height="90" alt="walmart" /><br/>Project No: 52</h3>
-            <h3 style="color:#c91e2f;font-family:Arial, Helvetica, sans-serif;">Project Title: <u>To predict the sales of weather sensitive products of Walmart during major weather events</u></h3>
-            <h3 style="color:#02024d;font-family:Arial, Helvetica, sans-serif;">Date</h3>
-            <input id="first" name="dates" type="text" required="required" placeholder="Enter a date in YYYY-MM-DD format">
-            <h3 style="color:#02024d;font-family:Arial, Helvetica, sans-serif;">Store Number</h3><input id="second" name="storeno" required="required" type="number" maxlength="2" min="1" max="45">
-			<h3 style="color:#02024d;font-family:Arial, Helvetica, sans-serif;">Item Number</h3><input id="third" name="itemno" required="required" type="number" maxlength="3" min="1" max="111">
-            
-            <br><br><button id="sub" type="submit " style="background-color: #9ffa91;font-family:Arial, Helvetica, sans-serif;">Calculate Sales Units</button>
-            
-        </form>
-
-        <br><h3>{{ prediction_text }}<h3>
-    </div>
-
-
     <style>
-        body {
-            background-color: #0ecaf0;
+        body, html {
+            background-color: #FFFFFF;
             text-align: center;
             padding: 0px;
 			font-family: "Arial, Helvetica, sans-serif;";
-			
+            width: 100%;
+            height: 100%;
+            margin: 0px;			
         }
-        
         #sub {
-            width: 150px;
-            height: 60px;
+            width: 200px;
+            height: 46px;
             text-align: center;
-            border-radius: 15px;
+            border-radius: 5px;
             font-size: 18px;
+            border: none;
+            margin-top: 50px;
+            color: #FFFFFF;
         }
-        
         #sub:hover {
             background-color: #D5DEEB;
         }
-        
         #first {
             border-radius: 16px;
-			width: 300px;
+			width: 100%;
             height: 40px;
             font-size: 16px;
             text-align: center;
         }
-        
         #second {
             border-radius: 16px;
-			width: 150px;
-            height: 30px;
+			width: 100%;
+            height: 40px;
             font-size: 20px;
             text-align: center;
         }
-        
         #third {
             border-radius: 16px;
-			width: 150px;
-            height: 30px;
+			width: 100%;
+            height: 40px;
             font-size: 20px;
             text-align: center;
-        }
-        
-     
+        }     
     </style>
+
+</head>
+
+<body>
+    <div style="color:#01224C; display: flex; flex-direction: row; height: 100%;">
+        <div style="width: 30%; height: 100%; background-color: #E94666;">
+            <div style="color:#FFFFFF;font-family:Arial, Helvetica, sans-serif; height: 40%; display: flex; align-items: center; justify-content: center;">
+                <img style="width: 70%; height: 200px;" src="https://www.freepnglogos.com/uploads/walmart-logo-5.jpg" alt="walmart logo" />
+            </div>
+            <div style="color:#FFFFFF;font-family:Arial, Helvetica, sans-serif;">
+                <div>
+                    <h1>
+                        Project No: 52
+                    </h1>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h3 style="opacity: 0.9;">
+                        Project Title:
+                    </h3>
+                </div>
+                <div style="opacity: 0.85;">
+                    To predict the sales of weather sensitive products of Walmart during major weather events
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #FFFFFF; height: 100%; width: 72%; display: flex; align-items: center; justify-content: center;">
+            <form action="{{ url_for('predict')}}" method="post">
+                <h3 style="color:#000000;font-family:Arial, Helvetica, sans-serif;">
+                    Date
+                </h3>
+                <input id="first" name="dates" type="text" required="required" placeholder="YYYY-MM-DD">
+                <h3 style="color:#000000;font-family:Arial, Helvetica, sans-serif;">
+                    Store Number
+                </h3>
+                <input id="second" name="storeno" required="required" type="number" maxlength="2" min="1" max="45">
+                <h3 style="color:#000000;font-family:Arial, Helvetica, sans-serif;">
+                    Item Number
+                </h3>
+                <input id="third" name="itemno" required="required" type="number" maxlength="3" min="1" max="111">
+                <br><br><button id="sub" type="submit" style="background-color: #E94666;font-family:Arial, Helvetica, sans-serif;">Calculate Sales Units</button>
+                <h3>{{ prediction_text }}</h3>
+            </form>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
