@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project52 - Walmart Sales in Stormy Weather</title>
+</head>
+
+<body>
+
+    <div style="color:#01224C">
+        <form action="{{ url_for('predict')}}" method="post">
+			
+			<h3 style="color:#c91e2f;font-family:Arial, Helvetica, sans-serif;"><img src="https://www.freepnglogos.com/uploads/walmart-logo-33.jpg" width="180" height="90" alt="walmart" /><br/>Project No: 52</h3>
+            <h3 style="color:#c91e2f;font-family:Arial, Helvetica, sans-serif;">Project Title: <u>To predict the sales of weather sensitive products of Walmart during major weather events</u></h3>
+            <h3 style="color:#02024d;font-family:Arial, Helvetica, sans-serif;">Date</h3>
+            <input id="first" name="dates" type="text" required="required" placeholder="Enter a date in YYYY-MM-DD format">
+            <h3 style="color:#02024d;font-family:Arial, Helvetica, sans-serif;">Store Number</h3><input id="second" name="storeno" required="required" type="number" maxlength="2" min="1" max="45">
+			<h3 style="color:#02024d;font-family:Arial, Helvetica, sans-serif;">Item Number</h3><input id="third" name="itemno" required="required" type="number" maxlength="3" min="1" max="111">
+            
+            <br><br><button id="sub" type="submit " style="background-color: #9ffa91;font-family:Arial, Helvetica, sans-serif;">Calculate Sales Units</button>
+            
+        </form>
+
+        <br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+    <style>
+        body {
+            background-color: #0ecaf0;
+            text-align: center;
+            padding: 0px;
+			font-family: "Arial, Helvetica, sans-serif;";
+			
+        }
+        
+        #sub {
+            width: 150px;
+            height: 60px;
+            text-align: center;
+            border-radius: 15px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: #D5DEEB;
+        }
+        
+        #first {
+            border-radius: 16px;
+			width: 300px;
+            height: 40px;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 16px;
+			width: 150px;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 16px;
+			width: 150px;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+     
+    </style>
+</body>
+
+</html>
+
